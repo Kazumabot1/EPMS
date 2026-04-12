@@ -1,4 +1,4 @@
-package main.java.com.epms.config;
+package com.epms.config;
 
 
 import io.jsonwebtoken.*;
