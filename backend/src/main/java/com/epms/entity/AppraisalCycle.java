@@ -24,4 +24,10 @@ public class AppraisalCycle {
     private String status; // DRAFT, ACTIVE, COMPLETED, LOCKED
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt = new Date();
+<<<<<<< HEAD
+=======
+
+    @OneToMany(mappedBy = "cycle")
+    private List<Appraisal> appraisals;
+>>>>>>> AMM
 }
