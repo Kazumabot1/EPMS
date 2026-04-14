@@ -9,18 +9,21 @@ import java.util.Set;
 
 @Entity
 @Table(name = "notification_templates")
+@Entity
+@Table(name = "notification_templates") // fix table name
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class NotificationTemplate {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;          // e.g., "PIP_CREATED"
-    private String subject;
+    private String channelType;
+    private String subjectTemplate;
     private String bodyTemplate;
-    private String channel;       // EMAIL, IN_APP, BOTH
 
-    @ElementCollection
-    private Set<String> triggerEvents = new HashSet<>();
+    @OneToMany(mappedBy = "notificationTemplate")
+    private java.util.List<Notification> notifications;
 }
