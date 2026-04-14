@@ -15,7 +15,6 @@ public class NotificationTemplate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private String channelType;
     private String subjectTemplate;
     private String bodyTemplate;
