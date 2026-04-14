@@ -7,9 +7,7 @@ import lombok.AllArgsConstructor;
 
 @Entity
 @Table(name = "appraisal_answers")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class AppraisalAnswer {
 
     @Id
