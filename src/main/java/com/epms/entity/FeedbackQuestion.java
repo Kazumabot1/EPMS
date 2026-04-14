@@ -2,6 +2,8 @@ package com.epms.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "feedback_question")
 public class FeedbackQuestion {
