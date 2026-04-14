@@ -12,13 +12,26 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Notification {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer userId;
+
+    // ✅ FIXED: relation instead of userId
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     private String title;
     private String message;
-    private String type; // APPRAISAL, FEEDBACK, PIP, MEETING
+    private String type;
+
     private Boolean isRead = false;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt = new Date();
+
+    @ManyToOne
+    @JoinColumn(name = "notification_template_id")
+    private NotificationTemplate notificationTemplate;
 }
